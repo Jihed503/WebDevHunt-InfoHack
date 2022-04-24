@@ -1,0 +1,95 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/devregister.css">
+    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+
+    <title>Login</title>
+</head>
+
+<body>
+    <form id="myform" action="../" method="POST">
+        {% csrf_token %}
+        <section class="h-150 h-custom gradient-custom-2">
+            <div class="container py-5 h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-8">
+                        <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+                            <div class="card-body p-0">
+                                <div class="row g-0 justify-content-center">
+                                    <div class="col-lg-8">
+                                        <div class="p-5">
+                                            <h3 class="fw-normal mb-5" style="color: #4835d4;">Login</h3>
+
+
+                                            <!--**************************Email**************************-->
+                                            <div class="mb-4 pb-2">
+                                                <div class="form-outline form-white">
+                                                    <label class="form-label" for="mail">Email</label>
+                                                    <input type="email" id="mail" class="form-control form-control-lg"
+                                                        required name="email"/>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-12 mb-4 pb-2">
+                                                    <!--**************************Password**************************-->
+                                                    <div class="form-outline">
+                                                        <label class="form-label" for="pwd">Password</label>
+                                                        <input type="password" id="pwd"
+                                                            class="form-control form-control-lg"
+                                                            pattern="[a-zA-Z0-9]{8,}"
+                                                            title="At least 8 digits el letters " name="password" value="" required />
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="form-check mb-4 pb-2 text-center">
+                                                <input class="form-check-input" type="radio" name="user"
+                                                    id="client" value="client" checked>
+                                                <label class="form-check-label" for="client">
+                                                    Client
+                                                </label>
+
+                                                <input style="margin-left:10px" class="form-check-input" type="radio"
+                                                    name="user" id="developer" value="developer">
+                                                <label style="margin-left:30px" class="form-check-label"
+                                                    for="developer">
+                                                    Developer
+                                                </label>
+                                            </div>
+
+                                            <div class="col text-center">
+                                                <button type="submit" class="btn btn-primary btn-lg col"
+                                                    data-mdb-ripple-color="dark">Enter</button>
+                                            </div>
+                                            <div style="padding-top: 10px" class="text-center">
+                                                <a href="javascript:void(0);" onclick="sendMail();">Forgot password
+                                                    ?</a>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </section>
+    </form>
+    <script src="../static/js/forgotpwd.js"></script>
+</body>
+
+</html>

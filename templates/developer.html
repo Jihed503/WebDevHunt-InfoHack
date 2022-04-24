@@ -1,0 +1,141 @@
+{% load static%}
+{{developer.all}}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>{{developer.firstname}}</title>
+
+    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #4835d4;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">WebDevHunt</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main style="padding-top: 100px">
+        <!-----------------------------jumbotron------------------------------->
+        <div id="home" class="jumbotron text-center" style="margin-top:0px">
+            <img style="width:20%; margin-top:30px; border-radius: 100%;" src={{developer.image}} class="img-circle"
+                alt="personal photo">
+            <h1>{{developer.firstname}} {{developer.lastname}}</h1>
+            <h3 style="margin-bottom:20px" class="text-muted">{{developer.position}}</h3>
+            <div class="text-center">
+                <a style="text-decoration: none" href="https://github.com/Jihed503" target="blank"><i
+                        style="margin-left:10px" class="fa fa-github fa-2x"></i></a>
+                <a style="text-decoration: none" href="https://www.linkedin.com/in/jihed-selmi-503/" target="blank"><i
+                        style="margin-left:10px" class="fa fa-linkedin fa-2x"></i></a>
+                <a style="text-decoration: none" href="https://www.facebook.com/jihed.selmi.7334/" target="blank"><i
+                        style="margin-left:10px" class="fa fa-facebook fa-2x"></i></a>
+            </div>
+            <p>
+                {{developer.about}}
+            </p>
+        </div>
+        <div class="container marketing">
+
+
+
+            <!-- Developers -->
+
+            {% for project in projects %}
+            <hr class="featurette-divider">
+
+
+            <h1>{{project.name}}</h1>
+
+            <div class="row featurette">
+                <div class="col-md-7">
+
+                    <p class="lead">{{project.description}} Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Dolore, sint aliquid. Cupiditate, recusandae perspiciatis, facilis accusamus autem explicabo
+                        veritatis modi nisi officiis iste accusantium dolores consequuntur unde, ut sint sunt? </p>
+
+                    <br>
+
+                    {{project.date}}
+
+                    <br>
+
+                    <form action="../project/{{project.id}}/">
+                        <div style="position: absolute; bottom: 20px; " class="col-md-7 text-center">
+                            <button style="background-color:#4835d4; color:#FFFFFF" type="submit" class="btn btn-lg col"
+                                data-mdb-ripple-color="dark">Visit Project</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-5">
+                    <img src="{{project.image}}" alt="profile image" width="500" height="500">
+                    </svg>
+
+                </div>
+            </div>
+
+
+            {%endfor%}
+
+        </div>
+
+
+
+    </main>
+
+
+
+
+</body>
+
+</html>
