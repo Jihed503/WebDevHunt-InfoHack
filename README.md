@@ -76,7 +76,7 @@ Our tech stack includes:
     ├── models.py
     ├── tests.py
     └── views.py
-'''
+```
 
 Overall:
 * Models are located in `webdevhunterapp/models.py`.
